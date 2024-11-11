@@ -1,14 +1,25 @@
 // import React from 'react';
 
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { Link } from "react-router-dom";
+import { auth } from "../Firebase/Firebase";
 
 function LoginForm() {
+    //googleAuth Provider
+    const GoogleProvider = new GoogleAuthProvider()
+    //handleSubmit 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        signInWithPopup(auth, GoogleProvider)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err))
+    }
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center text-gray-800">Login</h2>
         
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           {/* Email Input */}
           <div>
             <label className="block mb-1 text-gray-600" htmlFor="email">Email</label>

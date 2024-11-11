@@ -7,7 +7,7 @@
 6. Go to created firebase project and enable Google authincation
 7. Go to firebase.doc and hover on build tab and goto authintication 
 8. Click get start in web link and copy the import and export link and paste it in your created firebase config file
-9.
+9. Create a Provider where you want to use Google authProvider
 
 
 */
