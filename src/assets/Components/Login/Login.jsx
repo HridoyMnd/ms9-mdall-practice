@@ -1,33 +1,31 @@
 // import React from 'react';
 
-import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+// import {GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { Link } from "react-router-dom";
-import { auth } from "../Firebase/Firebase";
+// import { auth } from "../Firebase/Firebase";
 import { useState } from "react";
 
 function LoginForm() {
     //collect user info
     const [info, setInfo] = useState(null)
     //googleAuth Provider
-    const GoogleProvider = new GoogleAuthProvider()
+    // const GoogleProvider = new GoogleAuthProvider()
     //handleSubmit 
     const handleSubmit = (e) => {
         e.preventDefault()
-        signInWithPopup(auth, GoogleProvider)
+        // signInWithPopup(auth, GoogleProvider)
         .then((res) => setInfo(res.user))
         .catch((err) => console.log(err))
     }
     //handleSignOut
     const handleSignOut = () => {
-        signOut(auth)
-        .then(() => {
-            console.log("sign out done")
-            setInfo(null)
-        })
-       
-        .catch((err) => console.log(err))
+        // signOut(auth)
+        // .then(() => {
+        //     console.log("sign out done")
+        //     setInfo(null)
+        // })
+        // .catch((err) => console.log(err))
     }
-    console.log(info);
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
